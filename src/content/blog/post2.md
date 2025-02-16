@@ -2,7 +2,7 @@
 title: "Frontend Development Trends in 2024"
 description: "Explore the latest trends in frontend development, including new frameworks, tools, and best practices."
 pubDate: "Feb 16 2025"
-heroImage: "/post_img.webp"
+heroImage: "/post2.webp"
 ---
 
 Frontend development is evolving rapidly, with new frameworks and technologies emerging every year. Staying ahead of these trends is essential for developers looking to build modern, efficient, and scalable web applications.

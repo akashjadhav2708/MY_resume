@@ -2,7 +2,7 @@
 title: "The Evolution of Frontend Development in 2025"
 description: "A deep dive into the latest advancements in frontend technologies, frameworks, and best practices for modern web applications."
 pubDate: "Feb 16 2025"
-heroImage: "/frontend_trends.webp"
+heroImage: "/post1.webp"
 tags: ["frontend", "development", "web"]
 ---
 

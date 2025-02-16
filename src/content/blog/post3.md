@@ -2,7 +2,7 @@
 title: "The Future of UI/UX Design in 2025"
 description: "An insightful look into the evolving trends of UI/UX design, including new tools, user behavior, and best practices."
 pubDate: "Feb 16 2025"
-heroImage: "/uiux_trends.webp"
+heroImage: "/post3.webp"
 tags: ["design", "ux", "ui"]
 ---
 
