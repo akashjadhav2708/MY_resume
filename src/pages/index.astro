@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
+import createSlug from "../lib/createSlug";
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
@@ -12,67 +12,76 @@ const last_posts = posts.slice(0, 3);
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+    <div class="text-5xl font-bold">I'm Akash Jadhav</div>
+    <div class="text-3xl py-3 font-bold">Software Developer Engineer</div>
     <div class="py-2">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+        Welcome to my portfolio! I specialize in **React.js, Node.js, and hybrid web development**, with experience in
+        **ERP integrations, SaaS solutions, and UI development**. Passionate about crafting impactful software solutions and optimizing workflows.
       </text>
     </div>
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
+      <a class="btn" href="https://www.linkedin.com/in/akash-jadhav-863318326/" target="_blank"> Let's connect!</a>
+      <a href="https://github.com/akashjadhav2708" target="_blank" class="btn btn-outline ml-5">
+        View My Work
       </a>
     </div>
   </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2">My Last Projects {"</>"}</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    title="IT Ticketing Tool"
+    img="/ticketing_tool.webp"
+    desc="Developed a task-tracking tool using Next.js and PostgreSQL, streamlining IT issue management similar to Jira."
     url="#"
-    badge="NEW"
+    badge="In Progress"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    title="Hotelier Registration Module"
+    img="/hotel_module.webp"
+    desc="Designed and built a SaaS product for hotel management, enhancing room availability, pricing, and inventory tracking."
     url="#"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    title="Company ERP System"
+    img="/erp_system.webp"
+    desc="Integrated multiple business processes into an ERP, improving efficiency and vendor management."
     url="#"
-    badge="FOSS"
+    badge="IN USE"
   />
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from Blog</div>
   </div>
 
   {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
+    last_posts.length > 0 ? (
+      last_posts.map((post) => (
+        <>
+          <HorizontalCard
+            title={post.data.title}
+            img={post.data.heroImage || "/default_blog.webp"}
+            desc={post.data.description || "A deep dive into modern software development practices."}
+            url={"/blog/" + createSlug(post.data.title, post.slug)}
+            target="_self"
+            badge={post.data.badge || "NEW"}
+          />
+          <div class="divider my-0" />
+        </>
+      ))
+    ) : (
+      <HorizontalCard
+        title="Optimizing React Apps for Performance"
+        img="/react_performance.webp"
+        desc="A guide on improving React applications with best practices for speed and efficiency."
+        url="#"
+        badge="FEATURED"
+      />
+    )
   }
 </BaseLayout>
